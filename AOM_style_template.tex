@@ -1,5 +1,7 @@
 % This is a very simple template that roughly follows the Academy of Management style guide.
-% There remain a number of areas for improvement, so please submit updates and fixes to the GitHub repository.
+% Please contact Bryan Stroube at U Maryland for general suggestions/improvements.
+% There remain a number of areas for improvement, and you can submit specific updates and fixes to the GitHub repository found here:
+% https://github.com/stroube/AOM-TeX-style-template
 % Note: you must use XeLaTeX or similar to typeset this document.
 
 \documentclass[12pt,letterpaper]{article}
@@ -76,11 +78,14 @@
   \usepackage{indentfirst}  
   \parindent=20pt
   
-  % Defines enivron for hypotheses, indented on both sides by the standard indent length and italicized
+  % Defines environment for hypotheses, indented on both sides by the standard indent length and italicized
   \newenvironment{hypothesis}{
   	\itshape
   	\leftskip=\parindent \rightskip=\parindent
   	\noindent\ignorespaces}
+
+  % For bibliography
+  %\usepackage[round]{natbib}
   
 % Document content begins here:
     
@@ -89,14 +94,14 @@
 \title{The Title of the AOM Submission}
 
 \section{Abstract}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This \LaTeX\ template generally adheres to the AOM style guide for conference paper submissions. It is formatted in Times New Roman with one-inch margins, includes a submission ID header, allows for defining hypotheses in block indented italics, and properly formats the three different levels of AOM headings using the standard \texttt{section},  \texttt{subsection}, and  \texttt{subsubsection} \LaTeX\ commands. All tables and figures are automatically placed at the end of the paper after the references. The goal is to make conversion of your existing \LaTeX\ documents as easy as possible.
 
 \noindent\textbf{Keywords:} keyword1, keyword2, keyword3, keyword4, keyword5
 \newpage
 
 \section{This is a main heading (section)}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  
+Some example citations from volume 57 issue 6 of AMJ:  \citet{9984685620141201}, \citet{9984686620141201}, \citet{9984686520141201}, and \citet{9984685820141201}. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -133,5 +138,11 @@ x & y & z \\ \hline
 \section{A second section}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\newpage
+\begin{singlespace}
+\bibliography{AMJ_articles}{}
+\bibliographystyle{cje}
+\end{singlespace}
 
 \end{document}
