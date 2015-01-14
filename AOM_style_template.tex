@@ -52,12 +52,14 @@
   
   % Makes the sections and subsections the same font size as normal document text; section titles are bold, uppercase, and centered; subsections are just bold
   \usepackage{titlesec}
+   \titleformat{\title}
+       {\filcenter\normalfont\bfseries\uppercase}{\thetitle}{1em}{}
   \titleformat{\section}
     {\filcenter\normalfont\bfseries\uppercase}{\thesection}{1em}{}
   \titleformat{\subsection}
     {\normalfont\bfseries}{\thesubsection}{1em}{}
-  \titleformat{\subsubsection}
-    {\normalfont\bfseries}{\thesubsubsection}{1em}{}
+  \titleformat{\subsubsection}[runin]
+   {\normalfont\bfseries\slshape}{\thesubsubsection}{1em}{\hspace*{\parindent}}
 
   \usepackage[hidelinks]{hyperref}
   \usepackage[round]{natbib}
@@ -65,24 +67,54 @@
   % Justifies paragraphs in standard flush left format
   \raggedright
 
+ % redefines the title command
+  \renewcommand{\title}[1]{
+  	\centerline{\textbf{#1}}
+  }
+
+  % Proper paragraph indenting
+  \usepackage{indentfirst}  
+  \parindent=20pt
+  
+  % Defines enivron for hypotheses, indented on both sides by the standard indent length and italicized
+  \newenvironment{hypothesis}{
+  	\itshape
+  	\leftskip=\parindent \rightskip=\parindent
+  	\noindent\ignorespaces}
+  
 % Document content begins here:
     
 \begin{document}
 
-\centerline{\textbf{The Title of the Paper}}
+\title{The Title of the AOM Submission}
 
 \section{Abstract}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\textbf{Keywords:} keyword1, keyword2, keyword3, keyword4, keyword5
-
+\noindent\textbf{Keywords:} keyword1, keyword2, keyword3, keyword4, keyword5
 \newpage
-	
-\section{Introduction}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{This is a main heading (section)}
 
-\subsection{This is a subsection}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{This is a second-level heading (subsection)}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. See Table \ref{tab:data_table} for a summary.
+
+\begin{hypothesis}
+Hypothesis 1: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+\end{hypothesis}
+
+\begin{hypothesis}
+Hypothesis 2: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{hypothesis}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. See Table \ref{tab:data_table} for a summary.
+
+\subsubsection{This is a third-level heading (subsubsection)}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. See Table \ref{tab:data_table} for a summary.
 
@@ -98,7 +130,7 @@ x & y & z \\ \hline
 \end{tabular}
 \end{table}
 
-\section{The second section}
+\section{A second section}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
